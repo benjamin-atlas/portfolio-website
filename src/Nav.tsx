@@ -47,15 +47,17 @@ const Nav = () => {
           <img src={profilePic} />
         </div>
         <h1 className="text-2xl font-semibold mb-2">Ben Atlas</h1>
-        <div className="grid grid-cols-5 ml-8 mr-8 mb-2">
-          {socialButtons.map((socialButton: SocialButton, index: number) => (
-            <div
-              key={index}
-              className="col-span-1 bg-gray-800 w-9 h-9 rounded-full flex justify-center items-center"
-            >
-              <FontAwesomeIcon icon={socialButton.icon}></FontAwesomeIcon>
-            </div>
-          ))}
+        <div className="w-full flex justify-center">
+          <div className="grid grid-cols-5 gap-3 mb-2">
+            {socialButtons.map((socialButton: SocialButton, index: number) => (
+              <div
+                key={index}
+                className="col-span-1 cursor-pointer bg-gray-800 hover:bg-blue-400 transition duration-300 ease-in-out w-9 h-9 rounded-full flex justify-center items-center"
+              >
+                <FontAwesomeIcon icon={socialButton.icon}></FontAwesomeIcon>
+              </div>
+            ))}
+          </div>
         </div>
         {menuItems.map((menuItem: MenuItem, index: number) => (
           <div key={index} className="grid grid-cols-5 items-center">
