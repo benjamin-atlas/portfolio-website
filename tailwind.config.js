@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        landing: "url('./src/assets/landing.jpg')",
+      },
       fontFamily: {
         poppins: ["Poppins", "sans"],
         raleway: ["Raleway", "sans"],
