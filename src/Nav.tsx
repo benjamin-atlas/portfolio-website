@@ -1,10 +1,13 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser,
+  faFile,
+  faEnvelope,
+} from "@fortawesome/free-regular-svg-icons";
 import {
   faHouse,
-  faPerson,
-  faFile,
   faBookOpen,
   faServer,
-  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -13,14 +16,16 @@ import {
   faSkype,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import profilePic from "../src/assets/profile.jpg";
+
 import MenuItem from "./interfaces/MenuItem";
 import SocialButton from "./interfaces/SocialButton";
 
 const Nav = () => {
   const menuItems: MenuItem[] = [
     { label: "Home", icon: faHouse, onClick: () => {} },
-    { label: "About", icon: faPerson, onClick: () => {} },
+    { label: "About", icon: faUser, onClick: () => {} },
     { label: "Resume", icon: faFile, onClick: () => {} },
     { label: "Portfolio", icon: faBookOpen, onClick: () => {} },
     { label: "Services", icon: faServer, onClick: () => {} },
@@ -37,16 +42,16 @@ const Nav = () => {
 
   return (
     <>
-      <div className="bg-black col-span-2 text-center">
-        <div className="rounded-full bg-indigo-50 h-[100px] w-[100px] text-black mt-5 inline-block">
-          <p>Me</p>
+      <div className="bg-black col-span-2 text-center font-poppins">
+        <div className="rounded-full bg-indigo-50 h-[125px] w-[125px] text-black mt-5 mb-2 inline-block overflow-hidden border-8 border-gray-200">
+          <img src={profilePic} />
         </div>
-        <h1>Benjamin Atlas</h1>
-        <div className="grid grid-cols-5">
+        <h1 className="text-2xl font-semibold mb-2">Ben Atlas</h1>
+        <div className="grid grid-cols-5 ml-8 mr-8 mb-2">
           {socialButtons.map((socialButton: SocialButton, index: number) => (
             <div
               key={index}
-              className="col-span-1 bg-gray-500 w-10 h-10 rounded-full flex justify-center items-center"
+              className="col-span-1 bg-gray-200 w-9 h-9 rounded-full flex justify-center items-center"
             >
               <FontAwesomeIcon icon={socialButton.icon}></FontAwesomeIcon>
             </div>
