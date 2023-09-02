@@ -10,7 +10,17 @@ const Landing = () => {
         <div className="text-4xl">
           <SimulatedTypingText
             prefix="I am a"
-            words={["Developer", "Dog Lover", "Husband", "Musician"]}
+            words={[
+              "developer.",
+              "dog lover.",
+              "loving husband.",
+              "musician.",
+              "cat dad.",
+              "weightlifter.",
+              "paddleboarder.",
+              "snowboarder.",
+              "'cool' uncle. (I wish)",
+            ]}
           ></SimulatedTypingText>
         </div>
       </div>

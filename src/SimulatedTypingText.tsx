@@ -1,51 +1,56 @@
 import { useState, useEffect } from "react";
 
 const SimulatedTypingText = (props: { prefix: string; words: string[] }) => {
-  const [displayedPhrase, setDisplayedPhrase] = useState(
+  const [nextPhrase, setNextPhrase] = useState(
     props.words[0] ? props.words[0] : "Idiot"
   );
-
   const [prefix, _setPrefix] = useState(props.prefix ? props.prefix : "I am a");
-
   const [typedText, setTypedText] = useState("");
   const [backspacing, setBackspacing] = useState(false);
+  const [typing, setTyping] = useState(true);
 
   useEffect(() => {
     const intervalId: number = setInterval(() => {
-      const randomIndex: number = Math.floor(
-        Math.random() * props.words.length
-      );
-      const newText: string = props.words[randomIndex];
-      setDisplayedPhrase(newText);
-    }, 8000); // Compute the switch based on the longest word + characters per second + some delay
+      let randomIndex: number = Math.floor(Math.random() * props.words.length);
+      let newText: string = props.words[randomIndex];
+
+      // random without duplicates.
+      while (props.words[randomIndex] === nextPhrase) {
+        randomIndex = Math.floor(Math.random() * props.words.length);
+        newText = props.words[randomIndex];
+      }
+      setNextPhrase(newText);
+      setTyping(true);
+      setBackspacing(true);
+    }, 4000);
 
     // Clear the interval when the component unmounts to prevent memory leaks
     return () => clearInterval(intervalId);
-  }, []); // Empty dependency array to run this effect only once on component mount
+  }, [backspacing]); // Empty dependency array to run this effect only once on component mount
 
   useEffect(() => {
     const intervalId: number = setInterval(() => {
-      if (typedText === displayedPhrase) {
-        setBackspacing(true);
-      }
+      if (backspacing) {
+        // Reuse start of string if it matches the next word, like real life!
+        if (
+          typedText.substring(0, typedText.length - 1) ==
+          nextPhrase.substring(0, typedText.length - 1)
+        ) {
+          setBackspacing(false);
+        }
 
-      if (typedText === "") {
-        // Probably want to ask, "would the eventually-backspaced substr
-        // match a substr of the same length for the next queued up word?""
-        // to simulate real typing.
-        setBackspacing(false);
+        setTypedText(typedText.substring(0, typedText.length - 1));
+      } else {
+        if (typedText.length !== nextPhrase.length) {
+          setTypedText(nextPhrase.substring(0, typedText.length + 1));
+        } else {
+          setTyping(false);
+        }
       }
-
-      setTypedText(
-        displayedPhrase.substring(
-          0,
-          backspacing ? typedText.length - 1 : typedText.length + 1
-        )
-      );
-    }, 150);
+    }, 80);
 
     return () => clearInterval(intervalId);
-  }, [typedText, backspacing]);
+  }, [nextPhrase, typedText, backspacing]);
 
   return (
     <div>
@@ -57,7 +62,12 @@ const SimulatedTypingText = (props: { prefix: string; words: string[] }) => {
           {typedText}
         </div>
       </div>
-      <div className="border-r-4 border-white animate-fadeIn h-10 w-1 ml-1 inline"></div>
+      <div
+        className={
+          "border-r-4 border-white h-10 w-1 ml-1 inline" +
+          (typing ? "" : " animate-fadeIn")
+        }
+      ></div>
     </div>
   );
 };
