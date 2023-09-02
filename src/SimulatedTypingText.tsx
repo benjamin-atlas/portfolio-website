@@ -1,5 +1,4 @@
-import { faCropSimple } from "@fortawesome/free-solid-svg-icons";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const SimulatedTypingText = (props: { prefix: string; words: string[] }) => {
   const [displayedPhrase, setDisplayedPhrase] = useState(

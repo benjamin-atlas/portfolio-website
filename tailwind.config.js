@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans"],
         raleway: ["Raleway", "sans"],
+        sans: ["Open Sans", "sans"],
       },
       animation: {
         fadeIn: "fadeIn 800ms linear infinite",

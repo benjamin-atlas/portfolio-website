@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -23,14 +25,14 @@ import MenuItem from "./interfaces/MenuItem";
 import SocialButton from "./interfaces/SocialButton";
 
 const Nav = () => {
-  const menuItems: MenuItem[] = [
-    { label: "Home", icon: faHouse, onClick: () => {} },
-    { label: "About", icon: faUser, onClick: () => {} },
-    { label: "Resume", icon: faFile, onClick: () => {} },
-    { label: "Portfolio", icon: faBookOpen, onClick: () => {} },
-    { label: "Services", icon: faServer, onClick: () => {} },
-    { label: "Contact", icon: faEnvelope, onClick: () => {} },
-  ];
+  const [menuItems, setMenuItems] = useState([
+    { label: "Home", icon: faHouse, active: true, onClick: () => {} },
+    { label: "About", icon: faUser, active: false, onClick: () => {} },
+    { label: "Resume", icon: faFile, active: false, onClick: () => {} },
+    { label: "Portfolio", icon: faBookOpen, active: false, onClick: () => {} },
+    { label: "Services", icon: faServer, active: false, onClick: () => {} },
+    { label: "Contact", icon: faEnvelope, active: false, onClick: () => {} },
+  ]);
 
   const socialButtons: SocialButton[] = [
     { link: "", icon: faTwitter },
@@ -40,15 +42,24 @@ const Nav = () => {
     { link: "", icon: faLinkedin },
   ];
 
+  const setActiveMenuItem = (selectedMenuItem: MenuItem) => {
+    setMenuItems(
+      menuItems.map((menuItem: MenuItem) => ({
+        ...menuItem,
+        active: menuItem === selectedMenuItem,
+      }))
+    );
+  };
+
   return (
     <>
       <div className="bg-black col-span-2 text-center font-poppins">
         <div className="rounded-full bg-indigo-50 h-[125px] w-[125px] text-black mt-5 mb-2 inline-block overflow-hidden border-8 border-gray-800">
           <img src={profilePic} />
         </div>
-        <h1 className="text-2xl font-semibold mb-2">Ben Atlas</h1>
+        <h1 className="text-2xl font-semibold mb-5">Ben Atlas</h1>
         <div className="w-full flex justify-center">
-          <div className="grid grid-cols-5 gap-3 mb-2">
+          <div className="grid grid-cols-5 gap-3 mb-10">
             {socialButtons.map((socialButton: SocialButton, index: number) => (
               <div
                 key={index}
@@ -60,11 +71,27 @@ const Nav = () => {
           </div>
         </div>
         {menuItems.map((menuItem: MenuItem, index: number) => (
-          <div key={index} className="grid grid-cols-5 items-center">
-            <div className="col-span-2">
+          <div
+            key={index}
+            className="group grid grid-cols-5 gap-x-4 mb-5 items-center font-sans text-gray-500 cursor-pointer"
+            onClick={() => setActiveMenuItem(menuItem)}
+          >
+            <div
+              className={
+                "col-span-1 text-right transition duration-200 ease-in-out group-hover:text-blue-400" +
+                (menuItem.active ? " text-blue-400" : "")
+              }
+            >
               <FontAwesomeIcon icon={menuItem.icon}></FontAwesomeIcon>
             </div>
-            <p className="col-span-3 text-left">{menuItem.label}</p>
+            <p
+              className={
+                "col-span-4 text-left transition duration-200 ease-in-out group-hover:text-white" +
+                (menuItem.active ? " text-white" : "")
+              }
+            >
+              {menuItem.label}
+            </p>
           </div>
         ))}
       </div>
