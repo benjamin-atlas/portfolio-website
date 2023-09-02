@@ -43,7 +43,7 @@ const Nav = () => {
   return (
     <>
       <div className="bg-black col-span-2 text-center font-poppins">
-        <div className="rounded-full bg-indigo-50 h-[125px] w-[125px] text-black mt-5 mb-2 inline-block overflow-hidden border-8 border-gray-200">
+        <div className="rounded-full bg-indigo-50 h-[125px] w-[125px] text-black mt-5 mb-2 inline-block overflow-hidden border-8 border-gray-800">
           <img src={profilePic} />
         </div>
         <h1 className="text-2xl font-semibold mb-2">Ben Atlas</h1>
@@ -51,7 +51,7 @@ const Nav = () => {
           {socialButtons.map((socialButton: SocialButton, index: number) => (
             <div
               key={index}
-              className="col-span-1 bg-gray-200 w-9 h-9 rounded-full flex justify-center items-center"
+              className="col-span-1 bg-gray-800 w-9 h-9 rounded-full flex justify-center items-center"
             >
               <FontAwesomeIcon icon={socialButton.icon}></FontAwesomeIcon>
             </div>
