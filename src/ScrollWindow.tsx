@@ -1,7 +1,7 @@
-import About from "./About";
-import Landing from "./Landing";
-import Resume from "./Resume";
-import Skills from "./Skills";
+import About from "./sections/About";
+import Landing from "./sections/Landing";
+import Resume from "./sections/Resume";
+import Skills from "./sections/Skills";
 
 const ScrollWindow = () => {
   return (

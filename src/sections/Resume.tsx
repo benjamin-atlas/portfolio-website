@@ -1,5 +1,5 @@
-import SectionHeader from "./utilities/SectionHeader";
-import ResumeItem from "./utilities/ResumeItem";
+import SectionHeader from "../utilities/SectionHeader";
+import ResumeItem from "../utilities/ResumeItem";
 
 const Resume = () => {
   return (

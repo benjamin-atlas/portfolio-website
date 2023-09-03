@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import AboutInfo from "./interfaces/AboutInfo";
-import StatCardInfo from "./interfaces/StatCardInfo";
-import StatCard from "./utilities/StatCard";
-import SectionHeader from "./utilities/SectionHeader";
-import kayakPic from "../src/assets/kayak.jpg";
+import AboutInfo from "../interfaces/AboutInfo";
+import StatCardInfo from "../interfaces/StatCardInfo";
+import StatCard from "../utilities/StatCard";
+import SectionHeader from "../utilities/SectionHeader";
+import kayakPic from "../../src/assets/kayak.jpg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

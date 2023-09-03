@@ -1,7 +1,7 @@
-import SectionHeader from "./utilities/SectionHeader";
+import SectionHeader from "../utilities/SectionHeader";
 import { useState } from "react";
-import SkillBar from "./utilities/SkillBar";
-import SkillInfo from "./interfaces/SkillInfo";
+import SkillBar from "../utilities/SkillBar";
+import SkillInfo from "../interfaces/SkillInfo";
 
 const Skills = () => {
   const [skillBars, _setSkillBars] = useState([
