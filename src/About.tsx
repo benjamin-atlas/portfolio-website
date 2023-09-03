@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
 import AboutInfo from "./interfaces/AboutInfo";
-import SectionHeader from "./SectionHeader";
+import StatCardInfo from "./interfaces/StatCardInfo";
+import StatCard from "./utilities/StatCard";
+import SectionHeader from "./utilities/SectionHeader";
 import kayakPic from "../src/assets/kayak.jpg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleRight,
+  faFaceSmile,
+  faHeadphones,
+  faUsers,
+  faNotesMedical,
+} from "@fortawesome/free-solid-svg-icons";
 
 const About = () => {
   // TODO: Pretty incremental animation, maybe?
@@ -17,6 +25,21 @@ const About = () => {
     { label: "Degree", value: "Bachelor of Science, Computer Science" },
   ]);
 
+  const [statCards, _setStatCards] = useState([
+    {
+      icon: faFaceSmile,
+      value: "7,241",
+      description: `Commits to Github`,
+    },
+    {
+      icon: faHeadphones,
+      value: "10,241",
+      description: "Lines of code written.",
+    },
+    { icon: faUsers, value: "1341", description: "Pull requests reviewed" },
+    { icon: faNotesMedical, value: "501", description: "Issues closed" },
+  ]);
+
   useEffect(() => {
     setYearsDeveloping(getYearDifferenceFromDate("2017-01-01"));
   }, []);
@@ -24,23 +47,23 @@ const About = () => {
   return (
     <section
       id="about-section"
-      className="relative bg-white text-black font-raleway w-full text-xl"
+      className="relative bg-white text-black font-raleway w-full text-xl pl-10"
     >
       <SectionHeader>About</SectionHeader>
       {
         // TODO: make these fade in nicely.
       }
-      <p className="ml-10 pb-5 pr-10">
+      <p className="pb-5 pr-10">
         My name is Benjamin Atlas. I am a professional software developer with{" "}
         {yearsDeveloping} years of professional full-stack development
         experience.
       </p>
-      <p className="ml-10 pb-5 pr-10">
+      <p className="pb-5 pr-10">
         Software development is not just a career, but a thing of passion for
         me. I truly find great fulfillment in solving complex problems, making
         intuitive interfaces, and playing bug detective.
       </p>
-      <div className="grid grid-cols-12 gap-8 ml-10 pr-10 pb-10">
+      <div className="grid grid-cols-12 gap-8 pr-10 pb-10">
         <div className="col-span-3 overflow-hidden">
           <img src={kayakPic} className="object-cover h-auto w-full" />
         </div>
@@ -68,6 +91,19 @@ const About = () => {
             ))}
           </div>
         </div>
+      </div>
+      <SectionHeader>Facts</SectionHeader>
+      <p>
+        I have worked collaboratively with dozens of extremely talented
+        developers since 2017, heavily engaged in agile/scrum practices. Here
+        are some real-time metrics.
+      </p>
+      <div className="flex w-full pt-10 pb-10">
+        {statCards.map((statCardInfo: StatCardInfo, index: number) => (
+          <div key={index} className="flex-1 justify-center">
+            <StatCard statCardInfo={statCardInfo}></StatCard>
+          </div>
+        ))}
       </div>
     </section>
   );

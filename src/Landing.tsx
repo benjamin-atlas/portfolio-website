@@ -1,4 +1,4 @@
-import SimulatedTypingText from "./SimulatedTypingText";
+import SimulatedTypingText from "./utilities/SimulatedTypingText";
 
 const Landing = () => {
   return (
