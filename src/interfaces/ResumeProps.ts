@@ -1,7 +1,7 @@
 interface ResumeProps {
   header: string;
   subheader: string;
-  timeFrame: string;
+  timeFrame?: string;
   bulletItems: string[];
 }
 
