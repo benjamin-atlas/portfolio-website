@@ -21,7 +21,10 @@ const About = () => {
     { label: "Phone", value: "970-689-8619" },
     { label: "City", value: "Fort Collins, CO" },
     { label: "Email", value: "benjamin.s.atlas@gmail.com" },
-    { label: "Freelance", value: "Available" },
+    {
+      label: "Freelance",
+      value: "Available, currently seeking opportunities!",
+    },
     { label: "Degree", value: "Bachelor of Science, Computer Science" },
   ]);
 

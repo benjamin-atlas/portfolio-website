@@ -38,7 +38,12 @@ const Nav = () => {
       active: false,
       onClick: () => scrollToSection("about-section"),
     },
-    { label: "Resume", icon: faFile, active: false, onClick: () => {} },
+    {
+      label: "Resume",
+      icon: faFile,
+      active: false,
+      onClick: () => scrollToSection("resume-section"),
+    },
     { label: "Portfolio", icon: faBookOpen, active: false, onClick: () => {} },
     { label: "Services", icon: faServer, active: false, onClick: () => {} },
     { label: "Contact", icon: faEnvelope, active: false, onClick: () => {} },

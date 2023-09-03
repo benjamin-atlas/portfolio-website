@@ -1,5 +1,6 @@
 import About from "./About";
 import Landing from "./Landing";
+import Resume from "./Resume";
 import Skills from "./Skills";
 
 const ScrollWindow = () => {
@@ -8,6 +9,7 @@ const ScrollWindow = () => {
       <Landing></Landing>
       <About></About>
       <Skills></Skills>
+      <Resume></Resume>
     </div>
   );
 };

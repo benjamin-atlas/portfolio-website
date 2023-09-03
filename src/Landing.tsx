@@ -19,8 +19,9 @@ const Landing = () => {
               "cat dad.",
               "weightlifter.",
               "paddleboard enthusiast.",
-              "snowboarder.",
-              "'cool' uncle. (I wish)",
+              "newfound snowboarder.",
+              "'cool' uncle. (I wish).",
+              "kitchen gadget nerd.",
             ]}
           ></SimulatedTypingText>
         </div>
