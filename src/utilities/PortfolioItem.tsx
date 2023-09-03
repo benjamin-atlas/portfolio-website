@@ -12,7 +12,9 @@ const PortfolioItem = ({
         <img src={kayak} className="w-full h-full object-contain"></img>
       </div>
       <h2 className="text-2xl mb-5">{portfolioItemInfo.title}</h2>
-      <p className="italic font-thin">{portfolioItemInfo.description}</p>
+      <p className="italic font-thin text-base">
+        {portfolioItemInfo.description}
+      </p>
     </div>
   );
 };

@@ -22,7 +22,7 @@ const Resume = () => {
         <p className="text-2xl font-bold mt-4 mb-4">Education</p>
         <ResumeItem
           resumeProps={{
-            header: "Fairmont Statue University",
+            header: "Fairmont State University",
             subheader: "Bachelor of Science, Computer Science",
             timeFrame: "2012-2017",
             bulletItems: ["one", "two", "three"],

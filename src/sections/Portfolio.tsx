@@ -24,16 +24,32 @@ const Portfolio = () => {
         <Slider {...settings}>
           <PortfolioItem
             portfolioItemInfo={{
-              title: "Jeff Nippard Workout Tracker",
-              description: "App that I use to track my crap",
+              title: "arcc-Clinical",
+              description:
+                "Angular web app used by thousands of doctors and clinicans across the United States and Canada for secure viewing and management of medical images.",
               images: [],
+              technologiesUsed: [],
+              teamSize: "Over a dozen developers.",
             }}
           />
           <PortfolioItem
             portfolioItemInfo={{
-              title: "arcc-Clinical",
-              description: "Medical image archiving thingy",
+              title: "Jeff Nippard Workout Tracker",
+              description:
+                "Ionic mobile app used for simple data entry based on programs from popular fitness influencer, Jeff Nippard. I literally use it every day (not joking). Lets the user track each day's workout schedule and save information like volume and rate of perceived exertion (RPE)",
               images: [],
+              technologiesUsed: [],
+              teamSize: "Solo",
+            }}
+          />
+          <PortfolioItem
+            portfolioItemInfo={{
+              title: "This Website ☝️🤯",
+              description:
+                "Webception. The very site you are visiting was a learning project in and of itself to brush up on React and learn Tailwind. Personal projects are a great jumping off point for learning new-to-you tech.",
+              images: [],
+              technologiesUsed: [],
+              teamSize: "Solo",
             }}
           />
           <PortfolioItem
@@ -41,6 +57,8 @@ const Portfolio = () => {
               title: "Rap God",
               description: "Rap app",
               images: [],
+              technologiesUsed: [],
+              teamSize: "Solo",
             }}
           />
           <PortfolioItem
@@ -48,6 +66,8 @@ const Portfolio = () => {
               title: "arcc-Mobile",
               description: "Yeah yeah yeah!",
               images: [],
+              technologiesUsed: [],
+              teamSize: "5 developers",
             }}
           />
           <PortfolioItem
@@ -55,13 +75,17 @@ const Portfolio = () => {
               title: "File Mover",
               description: "Bloop",
               images: [],
+              technologiesUsed: [],
+              teamSize: "5 developers",
             }}
           />
           <PortfolioItem
             portfolioItemInfo={{
               title: "Dicom Ingester",
-              description: "jeioawfjoipwan",
+              description: "2 developers",
               images: [],
+              technologiesUsed: [],
+              teamSize: "Solo",
             }}
           />
         </Slider>
