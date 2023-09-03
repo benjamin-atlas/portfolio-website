@@ -4,6 +4,7 @@ interface MenuItem {
   label: string;
   icon: IconDefinition;
   active: boolean;
+  id: string;
   onClick: () => void;
 }
 
