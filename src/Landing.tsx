@@ -18,7 +18,7 @@ const Landing = () => {
               "musician.",
               "cat dad.",
               "weightlifter.",
-              "paddleboarder.",
+              "paddleboard enthusiast.",
               "snowboarder.",
               "'cool' uncle. (I wish)",
             ]}

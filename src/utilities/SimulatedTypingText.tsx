@@ -26,7 +26,7 @@ const SimulatedTypingText = (props: { prefix: string; words: string[] }) => {
 
     // Clear the interval when the component unmounts to prevent memory leaks
     return () => clearInterval(intervalId);
-  }, [backspacing]); // Empty dependency array to run this effect only once on component mount
+  }, [backspacing]);
 
   useEffect(() => {
     const intervalId: number = setInterval(() => {

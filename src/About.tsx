@@ -36,7 +36,7 @@ const About = () => {
       value: "10,241",
       description: "Lines of code written.",
     },
-    { icon: faUsers, value: "1341", description: "Pull requests reviewed" },
+    { icon: faUsers, value: "1,341", description: "Pull requests reviewed" },
     { icon: faNotesMedical, value: "501", description: "Issues closed" },
   ]);
 
@@ -95,7 +95,7 @@ const About = () => {
       <SectionHeader>Facts</SectionHeader>
       <p>
         I have worked collaboratively with dozens of extremely talented
-        developers since 2017, heavily engaged in agile/scrum practices. Here
+        developers since 2017, heavily engaging in agile/scrum practices. Here
         are some real-time metrics.
       </p>
       <div className="flex w-full pt-10 pb-10">
