@@ -26,8 +26,18 @@ import SocialButton from "./interfaces/SocialButton";
 
 const Nav = () => {
   const [menuItems, setMenuItems] = useState([
-    { label: "Home", icon: faHouse, active: true, onClick: () => {} },
-    { label: "About", icon: faUser, active: false, onClick: () => {} },
+    {
+      label: "Home",
+      icon: faHouse,
+      active: true,
+      onClick: () => scrollToSection("landing-section"),
+    },
+    {
+      label: "About",
+      icon: faUser,
+      active: false,
+      onClick: () => scrollToSection("about-section"),
+    },
     { label: "Resume", icon: faFile, active: false, onClick: () => {} },
     { label: "Portfolio", icon: faBookOpen, active: false, onClick: () => {} },
     { label: "Services", icon: faServer, active: false, onClick: () => {} },
@@ -49,6 +59,13 @@ const Nav = () => {
         active: menuItem === selectedMenuItem,
       }))
     );
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -74,7 +91,10 @@ const Nav = () => {
           <div
             key={index}
             className="group grid grid-cols-5 gap-x-4 mb-5 items-center font-sans text-gray-500 cursor-pointer"
-            onClick={() => setActiveMenuItem(menuItem)}
+            onClick={() => {
+              menuItem.onClick();
+              setActiveMenuItem(menuItem);
+            }}
           >
             <div
               className={
