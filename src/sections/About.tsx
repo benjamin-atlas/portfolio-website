@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import AboutInfo from "../interfaces/AboutInfo";
+import ScrollTrigger from "../utilities/ScrollTrigger";
 import StatCardInfo from "../interfaces/StatCardInfo";
 import StatCard from "../utilities/StatCard";
 import SectionHeader from "../utilities/SectionHeader";
@@ -53,48 +54,66 @@ const About = () => {
       className="relative bg-white text-black font-raleway w-full text-xl pl-10"
     >
       <SectionHeader>About</SectionHeader>
-      {
-        // TODO: make these fade in nicely.
-      }
-      <p className="pb-5 pr-10">
-        My name is Benjamin Atlas. I am a professional software developer with{" "}
-        {yearsDeveloping} years of professional full-stack development
-        experience.
-      </p>
-      <p className="pb-5 pr-10">
-        Software development is not just a career, but a thing of passion for
-        me. I truly find great fulfillment in solving complex problems, making
-        intuitive interfaces, and playing bug detective.
-      </p>
-      <div className="grid grid-cols-12 gap-8 pr-10 pb-10">
-        <div className="col-span-3 overflow-hidden">
-          <img src={kayakPic} className="object-cover h-auto w-full" />
-        </div>
-        <div className="col-span-9">
-          <h2 className="text-2xl font-bold mb-4">Full Stack Web Developer</h2>
-          <p className="italic mb-8 text-lg">
-            I have written multiple large-scale medical imaging applications at
-            all levels of the development stack. Working most of my career from
-            a small company, I have learned to wear multiple hats with
-            mission-critical responsibilities as a front-end engineer, back-end
-            engineer, software architect, dev ops coordinator, and mentor.
-          </p>
-          <div className="grid grid-cols-2 gap-4">
-            {aboutInfo.map((aboutInfo: AboutInfo, index: number) => (
-              <div key={index}>
-                <FontAwesomeIcon
-                  icon={faAngleRight}
-                  className="mr-3 text-blue-400"
-                />
-                <label className="inline font-semibold">
-                  {aboutInfo.label}:
-                </label>
-                <p className="inline ml-5">{aboutInfo.value}</p>
-              </div>
-            ))}
+      <ScrollTrigger
+        initialClassName="opacity-0 transition-opacity duration-[1000ms]"
+        triggerClassName="opacity-100"
+        triggerOnce={true}
+      >
+        <p className="pb-5 pr-10">
+          My name is Benjamin Atlas. I am a professional software developer with{" "}
+          {yearsDeveloping} years of professional full-stack development
+          experience.
+        </p>
+      </ScrollTrigger>
+      <ScrollTrigger
+        initialClassName="opacity-0 transition-opacity duration-[2000ms]"
+        triggerClassName="opacity-100"
+        triggerOnce={true}
+      >
+        <p className="pb-5 pr-10">
+          Software development is not just a career, but a thing of passion for
+          me. I truly find great fulfillment in solving complex problems, making
+          intuitive interfaces, and playing bug detective.
+        </p>
+      </ScrollTrigger>
+      <ScrollTrigger
+        initialClassName="opacity-0 transition-opacity duration-[3000ms]"
+        triggerClassName="opacity-100"
+        triggerOnce={true}
+      >
+        <div className="grid grid-cols-12 gap-8 pr-10 pb-10 pt-10">
+          <div className="col-span-3 overflow-hidden">
+            <img src={kayakPic} className="object-cover h-auto w-full" />
+          </div>
+          <div className="col-span-9">
+            <h2 className="text-2xl font-bold mb-4">
+              Full Stack Web Developer
+            </h2>
+            <p className="italic mb-8 text-lg">
+              I have written multiple large-scale medical imaging applications
+              at all levels of the development stack. Working most of my career
+              from a small company, I have learned to wear multiple hats with
+              mission-critical responsibilities as a front-end engineer,
+              back-end engineer, software architect, dev ops coordinator, and
+              mentor.
+            </p>
+            <div className="grid grid-cols-2 gap-4">
+              {aboutInfo.map((aboutInfo: AboutInfo, index: number) => (
+                <div key={index}>
+                  <FontAwesomeIcon
+                    icon={faAngleRight}
+                    className="mr-3 text-blue-400"
+                  />
+                  <label className="inline font-semibold">
+                    {aboutInfo.label}:
+                  </label>
+                  <p className="inline ml-5">{aboutInfo.value}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </ScrollTrigger>
       <SectionHeader>Facts</SectionHeader>
       <p>
         I have worked collaboratively with dozens of extremely talented
