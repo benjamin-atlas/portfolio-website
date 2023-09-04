@@ -2,6 +2,7 @@ import About from "./sections/About";
 import Landing from "./sections/Landing";
 import Portfolio from "./sections/Portfolio";
 import Resume from "./sections/Resume";
+import Services from "./sections/Services";
 import Skills from "./sections/Skills";
 
 const ScrollWindow = () => {
@@ -12,6 +13,7 @@ const ScrollWindow = () => {
       <Skills></Skills>
       <Resume></Resume>
       <Portfolio></Portfolio>
+      <Services></Services>
     </div>
   );
 };
