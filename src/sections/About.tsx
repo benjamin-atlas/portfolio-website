@@ -14,6 +14,7 @@ import {
   faUsers,
   faNotesMedical,
 } from "@fortawesome/free-solid-svg-icons";
+import MajorSection from "../utilities/MajorSection";
 
 const About = () => {
   // TODO: Pretty incremental animation, maybe?
@@ -49,11 +50,7 @@ const About = () => {
   }, []);
 
   return (
-    <section
-      id="about-section"
-      className="relative bg-white text-black font-raleway w-full text-xl pl-10"
-    >
-      <SectionHeader>About</SectionHeader>
+    <MajorSection sectionName="about" header="About">
       <ScrollTrigger
         initialClassName="opacity-0 transition-opacity duration-[1000ms]"
         triggerClassName="opacity-100"
@@ -127,7 +124,7 @@ const About = () => {
           </div>
         ))}
       </div>
-    </section>
+    </MajorSection>
   );
 };
 

@@ -1,14 +1,10 @@
 import SectionHeader from "../utilities/SectionHeader";
 import ResumeItem from "../utilities/ResumeItem";
+import MajorSection from "../utilities/MajorSection";
 
 const Resume = () => {
   return (
-    <section
-      id="resume-section"
-      className="relative bg-white text-black font-raleway w-full text-xl pl-10 pb-10"
-    >
-      <SectionHeader>Resume</SectionHeader>
-
+    <MajorSection sectionName="resume" header="Resume">
       <div className="w-1/2 inline-block">
         <p className="text-2xl font-bold mb-4">Summary</p>
         <ResumeItem
@@ -58,7 +54,7 @@ const Resume = () => {
           }}
         />
       </div>
-    </section>
+    </MajorSection>
   );
 };
 

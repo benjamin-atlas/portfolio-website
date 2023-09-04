@@ -2,8 +2,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Slider from "react-slick";
-import SectionHeader from "../utilities/SectionHeader";
 import PortfolioItem from "../utilities/PortfolioItem";
+import MajorSection from "../utilities/MajorSection";
 
 const Portfolio = () => {
   const settings = {
@@ -15,11 +15,11 @@ const Portfolio = () => {
   };
 
   return (
-    <section
-      id="portfolio-section"
-      className="relative bg-blue-100 text-black font-raleway w-full text-xl pl-10 pr-10"
+    <MajorSection
+      sectionName="portfolio"
+      header="Portfolio"
+      bgColor="bg-blue-100"
     >
-      <SectionHeader>Portfolio</SectionHeader>
       <div className="pb-10">
         <Slider {...settings}>
           <PortfolioItem
@@ -90,7 +90,7 @@ const Portfolio = () => {
           />
         </Slider>
       </div>
-    </section>
+    </MajorSection>
   );
 };
 

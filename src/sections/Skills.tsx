@@ -1,4 +1,4 @@
-import SectionHeader from "../utilities/SectionHeader";
+import MajorSection from "../utilities/MajorSection";
 import { useState } from "react";
 import SkillBar from "../utilities/SkillBar";
 import SkillInfo from "../interfaces/SkillInfo";
@@ -16,11 +16,7 @@ const Skills = () => {
   ]);
 
   return (
-    <div
-      id="skill-group"
-      className="relative bg-blue-100 text-black font-raleway w-full text-xl pl-10 pr-10"
-    >
-      <SectionHeader>Skills</SectionHeader>
+    <MajorSection sectionName="skills" header="Skills" bgColor="bg-blue-100">
       <p className="italic mb-2 text-lg">
         My skills are predominantly with web-based frameworks. These are some of
         the tools I employ every day.
@@ -35,7 +31,7 @@ const Skills = () => {
           <SkillBar key={index} skillInfo={skillBarInfo}></SkillBar>
         ))}
       </div>
-    </div>
+    </MajorSection>
   );
 };
 
