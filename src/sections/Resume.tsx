@@ -1,4 +1,3 @@
-import SectionHeader from "../utilities/SectionHeader";
 import ResumeItem from "../utilities/ResumeItem";
 import MajorSection from "../utilities/MajorSection";
 
