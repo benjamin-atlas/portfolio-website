@@ -4,13 +4,17 @@ import short from "short-uuid";
 const ScrollTrigger = ({
   initialClassName,
   triggerClassName,
+  initialStyles,
+  triggerStyles,
   triggerOnce = false,
   children,
 }: {
-  initialClassName: string;
-  triggerClassName: string;
+  initialClassName?: string;
+  triggerClassName?: string;
+  initialStyles?: any;
+  triggerStyles?: any;
   triggerOnce?: boolean;
-  children: any;
+  children?: any;
 }) => {
   const [shouldShow, setShouldShow] = useState(false);
   const [randomId, setRandomId] = useState("temp");
@@ -50,7 +54,15 @@ const ScrollTrigger = ({
   return (
     <div
       id={randomId}
-      className={initialClassName + (shouldShow ? ` ${triggerClassName}` : "")}
+      className={
+        initialClassName +
+        (shouldShow && triggerClassName ? ` ${triggerClassName}` : "")
+      }
+      style={
+        shouldShow && triggerStyles
+          ? { ...initialStyles, ...triggerStyles }
+          : { ...initialStyles }
+      }
     >
       {children}
     </div>

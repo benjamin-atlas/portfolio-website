@@ -1,5 +1,5 @@
 import SectionHeader from "../utilities/SectionHeader";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SkillBar from "../utilities/SkillBar";
 import SkillInfo from "../interfaces/SkillInfo";
 
@@ -14,28 +14,6 @@ const Skills = () => {
     { name: "MS SQL Server", percentage: 80 },
     { name: "RxJS", percentage: 70 },
   ]);
-
-  const [showSkillsAnimation, setShowSkillsAnimation] = useState(false);
-
-  useEffect(() => {
-    const observer: IntersectionObserver = new IntersectionObserver(
-      (entries: IntersectionObserverEntry[]) => {
-        entries.forEach((entry: IntersectionObserverEntry) => {
-          if (entry.isIntersecting !== showSkillsAnimation) {
-            setShowSkillsAnimation(entry.isIntersecting);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    const skillGroupElement: HTMLElement | null =
-      document.querySelector("#skill-group");
-
-    if (skillGroupElement) {
-      observer.observe(skillGroupElement);
-    }
-  }, [showSkillsAnimation]);
 
   return (
     <div
@@ -54,11 +32,7 @@ const Skills = () => {
       </p>
       <div className="grid grid-cols-2 gap-4 pt-5 pb-10">
         {skillBars.map((skillBarInfo: SkillInfo, index: number) => (
-          <SkillBar
-            key={index}
-            skillInfo={skillBarInfo}
-            showSkillsAnimation={showSkillsAnimation}
-          ></SkillBar>
+          <SkillBar key={index} skillInfo={skillBarInfo}></SkillBar>
         ))}
       </div>
     </div>
