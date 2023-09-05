@@ -12,11 +12,13 @@ const ServiceItem = ({
 }) => {
   return (
     <div className="grid grid-cols-3 gap-8 font-poppin">
-      <div className="bg-blue-500 rounded-full relative w-[75px] h-[75px] col-span-1">
-        <FontAwesomeIcon
-          icon={icon}
-          className="text-2xl text-white absolute-center"
-        ></FontAwesomeIcon>
+      <div className="col-span-1 flex justify-end">
+        <div className="bg-blue-500 rounded-full relative w-[75px] h-[75px] col-span-1">
+          <FontAwesomeIcon
+            icon={icon}
+            className="text-2xl text-white absolute-center"
+          ></FontAwesomeIcon>
+        </div>
       </div>
       <div className="col-span-2">
         <h3 className="text-lg font-semibold">{serviceName}</h3>
