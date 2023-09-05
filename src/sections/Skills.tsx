@@ -26,7 +26,7 @@ const Skills = () => {
         always something new to learn and its something I very much enjoy about
         the process.
       </p>
-      <div className="grid grid-cols-2 gap-4 pt-5 pb-10">
+      <div className="grid grid-cols-2 gap-4 pt-5">
         {skillBars.map((skillBarInfo: SkillInfo, index: number) => (
           <SkillBar key={index} skillInfo={skillBarInfo}></SkillBar>
         ))}

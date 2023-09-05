@@ -20,7 +20,7 @@ const Portfolio = () => {
       header="Portfolio"
       bgColor="bg-blue-100"
     >
-      <div className="pb-10">
+      <div>
         <Slider {...settings}>
           <PortfolioItem
             portfolioItemInfo={{

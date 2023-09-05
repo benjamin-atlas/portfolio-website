@@ -63,7 +63,7 @@ const About = () => {
         </p>
       </ScrollTrigger>
       <ScrollTrigger
-        initialClassName="opacity-0 transition-opacity duration-[1000ms] delay-[500ms]"
+        initialClassName="opacity-0 transition-opacity duration-[1000ms] delay-[300ms]"
         triggerClassName="opacity-100"
         triggerOnce={true}
       >
@@ -74,7 +74,7 @@ const About = () => {
         </p>
       </ScrollTrigger>
       <ScrollTrigger
-        initialClassName="opacity-0 transition-opacity duration-[1000ms] delay-[1000ms]"
+        initialClassName="opacity-0 transition-opacity duration-[1000ms] delay-[600ms]"
         triggerClassName="opacity-100"
         triggerOnce={true}
       >
@@ -117,7 +117,7 @@ const About = () => {
         developers since 2017, heavily engaging in agile/scrum practices. Here
         are some real-time metrics.
       </p>
-      <div className="flex w-full pt-10 pb-10">
+      <div className="flex w-full pt-10">
         {statCards.map((statCardInfo: StatCardInfo, index: number) => (
           <div key={index} className="flex-1 justify-center">
             <StatCard statCardInfo={statCardInfo}></StatCard>
