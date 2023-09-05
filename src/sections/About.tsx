@@ -63,7 +63,7 @@ const About = () => {
         </p>
       </ScrollTrigger>
       <ScrollTrigger
-        initialClassName="opacity-0 transition-opacity duration-[2000ms]"
+        initialClassName="opacity-0 transition-opacity duration-[1000ms] delay-[500ms]"
         triggerClassName="opacity-100"
         triggerOnce={true}
       >
@@ -74,7 +74,7 @@ const About = () => {
         </p>
       </ScrollTrigger>
       <ScrollTrigger
-        initialClassName="opacity-0 transition-opacity duration-[3000ms]"
+        initialClassName="opacity-0 transition-opacity duration-[1000ms] delay-[1000ms]"
         triggerClassName="opacity-100"
         triggerOnce={true}
       >
