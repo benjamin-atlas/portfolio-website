@@ -33,16 +33,16 @@ const About = () => {
   const [statCards, _setStatCards] = useState([
     {
       icon: faFaceSmile,
-      value: "7,241",
+      value: 7241,
       description: `Commits to Github`,
     },
     {
       icon: faHeadphones,
-      value: "10,241",
+      value: 10241,
       description: "Lines of code written.",
     },
-    { icon: faUsers, value: "1,341", description: "Pull requests reviewed" },
-    { icon: faNotesMedical, value: "501", description: "Issues closed" },
+    { icon: faUsers, value: 1341, description: "Pull requests reviewed" },
+    { icon: faNotesMedical, value: 501, description: "Issues closed" },
   ]);
 
   useEffect(() => {

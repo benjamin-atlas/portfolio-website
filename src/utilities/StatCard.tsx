@@ -1,17 +1,23 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import StatCardInfo from "../interfaces/StatCardInfo";
+import CountUp from "react-countup";
+import ScrollTrigger from "./ScrollTrigger";
 
-const StatCard = (props: { statCardInfo: StatCardInfo }) => {
+const StatCard = ({ statCardInfo }: { statCardInfo: StatCardInfo }) => {
   return (
     <div className="grid grid-cols-3 gap-4 font-sans">
       <div className="col-span-1 text-blue-400 text-7xl text-right">
-        <FontAwesomeIcon icon={props.statCardInfo.icon}></FontAwesomeIcon>
+        <FontAwesomeIcon icon={statCardInfo.icon}></FontAwesomeIcon>
       </div>
       <div className="col-span-2">
-        <div className="text-6xl font-extrabold">
-          {props.statCardInfo.value}
-        </div>
-        <div className="text-lg">{props.statCardInfo.description}</div>
+        <CountUp end={statCardInfo.value} duration={3}>
+          {({ countUpRef, start }) => (
+            <ScrollTrigger triggerOnce={true} onScrollStateChanged={start}>
+              <span ref={countUpRef} className="text-6xl font-extrabold"></span>
+            </ScrollTrigger>
+          )}
+        </CountUp>
+        <div className="text-lg">{statCardInfo.description}</div>
       </div>
     </div>
   );

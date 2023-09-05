@@ -2,7 +2,7 @@ import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 interface StatCardInfo {
   icon: IconDefinition;
-  value: string;
+  value: number;
   description: string;
 }
 

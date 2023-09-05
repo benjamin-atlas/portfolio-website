@@ -7,6 +7,7 @@ const ScrollTrigger = ({
   initialStyles,
   triggerStyles,
   triggerOnce = false,
+  onScrollStateChanged,
   children,
 }: {
   initialClassName?: string;
@@ -14,6 +15,7 @@ const ScrollTrigger = ({
   initialStyles?: any;
   triggerStyles?: any;
   triggerOnce?: boolean;
+  onScrollStateChanged?: (state: boolean) => void;
   children?: any;
 }) => {
   const [shouldShow, setShouldShow] = useState(false);
@@ -31,6 +33,9 @@ const ScrollTrigger = ({
           entries.forEach((entry: IntersectionObserverEntry) => {
             if (entry.isIntersecting !== shouldShow) {
               setShouldShow(entry.isIntersecting);
+              if (onScrollStateChanged) {
+                onScrollStateChanged(entry.isIntersecting);
+              }
 
               if (triggerOnce) {
                 setTriggeredOnce(true);
