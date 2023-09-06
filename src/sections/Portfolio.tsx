@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import PortfolioItem from "../utilities/PortfolioItem";
 import MajorSection from "../utilities/MajorSection";
 
+import clinical1 from "../../src/assets/clinical-1.png";
+
 const Portfolio = () => {
   const settings = {
     dots: true,
@@ -25,67 +27,80 @@ const Portfolio = () => {
           <PortfolioItem
             portfolioItemInfo={{
               title: "arcc-Clinical",
-              description:
+              descriptionPoints: [
                 "Angular web app used by thousands of doctors and clinicans across the United States and Canada for secure viewing and management of medical images.",
-              images: [],
-              technologiesUsed: [],
+                "We built this application from the ground up in 2017 and since starting I have a role at every level, from UI/UX design to REST API development to database.",
+              ],
+              images: [clinical1],
+              technologiesUsed: [
+                "Angular",
+                "SCSS",
+                "TypeScript",
+                "VB.NET",
+                "SQL Server",
+              ],
               teamSize: "Over a dozen developers.",
-            }}
-          />
-          <PortfolioItem
-            portfolioItemInfo={{
-              title: "Workout Tracker",
-              description:
-                "Ionic mobile app used for simple data entry based on programs from popular fitness influencer, Jeff Nippard. I literally use it every day (not joking). Lets the user track each day's workout schedule and save information like volume and rate of perceived exertion (RPE)",
-              images: [],
-              technologiesUsed: [],
-              teamSize: "Solo",
+              myRole: "Development Team Lead",
             }}
           />
           <PortfolioItem
             portfolioItemInfo={{
               title: "This Website ☝️🤯",
-              description:
+              descriptionPoints: [
                 "Webception. The very site you are visiting was a learning project in and of itself to brush up on React and learn Tailwind. Personal projects are a great jumping off point for learning new-to-you tech.",
+              ],
               images: [],
               technologiesUsed: [],
-              teamSize: "Solo",
+              myRole: "Sole Developer",
             }}
           />
           {/* <PortfolioItem
             portfolioItemInfo={{
               title: "Rap God",
-              description: "Rap app",
+              descriptionPoints: ["Rap app",],
               images: [],
               technologiesUsed: [],
-              teamSize: "Solo",
+              myRole: "Sole Developer",
             }}
           /> */}
           <PortfolioItem
             portfolioItemInfo={{
               title: "arcc-Mobile",
-              description: "Yeah yeah yeah!",
+              descriptionPoints: ["Yeah yeah yeah!"],
               images: [],
               technologiesUsed: [],
               teamSize: "5 developers",
+              myRole: "Development Team Lead",
+            }}
+          />
+          <PortfolioItem
+            portfolioItemInfo={{
+              title: "Workout Tracker",
+              descriptionPoints: [
+                "Ionic mobile app used for simple data entry based on programs from popular fitness influencer, Jeff Nippard. I literally use it every day (not joking). Lets the user track each day's workout schedule and save information like volume and rate of perceived exertion (RPE)",
+              ],
+              images: [],
+              technologiesUsed: [],
+              myRole: "Sole Developer",
             }}
           />
           {/* <PortfolioItem
             portfolioItemInfo={{
               title: "File Mover",
-              description: "Bloop",
+              descriptionPoints: ["Bloop",],
               images: [],
               technologiesUsed: [],
               teamSize: "5 developers",
+              myRole: "Project Owner",
             }}
           />
           <PortfolioItem
             portfolioItemInfo={{
               title: "Dicom Ingester",
-              description: "2 developers",
+              descriptionPoints: ["",],
               images: [],
               technologiesUsed: [],
-              teamSize: "Solo",
+              teamSize: "2 developers",
             }}
           /> */}
         </Slider>

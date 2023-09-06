@@ -5,7 +5,7 @@ import ScrollTrigger from "./ScrollTrigger";
 
 const ResumeItem = (props: { resumeProps: ResumeProps }) => {
   return (
-    <div className="font-poppins font-thin border-l-4 border-blue-400 pl-4 relative">
+    <div className="font-poppins font-thin border-l-4 border-blue-400 pl-4 pr-4 relative">
       <ScrollTrigger
         initialClassName="rounded-full w-[20px] h-[20px] border-4 border-blue-400 absolute top-[100%] transition-[top] duration-[1000ms] ease-in-out left-[-2px] translate-x-[-50%] bg-white"
         triggerStyles={{ top: "0%" }}

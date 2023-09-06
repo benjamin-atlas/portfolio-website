@@ -1,9 +1,10 @@
 interface PortfolioItemInfo {
   title: string;
-  description: string;
+  descriptionPoints: string[];
   images: string[];
   technologiesUsed: string[];
-  teamSize: string;
+  teamSize?: string;
+  myRole?: string;
 }
 
 export default PortfolioItemInfo;
