@@ -1,4 +1,6 @@
+import ResumeBulletItem from "../interfaces/ResumeBulletItem";
 import ResumeProps from "../interfaces/ResumeProps";
+import BoldTextInString from "./BoldTextInString";
 import ScrollTrigger from "./ScrollTrigger";
 
 const ResumeItem = (props: { resumeProps: ResumeProps }) => {
@@ -16,11 +18,16 @@ const ResumeItem = (props: { resumeProps: ResumeProps }) => {
         </div>
       )}
       <ul className="list-disc ml-10">
-        {props.resumeProps.bulletItems.map((item: string, index: number) => (
-          <li key={index} className="text text-base mb-1">
-            {item}
-          </li>
-        ))}
+        {props.resumeProps.bulletItems.map(
+          (item: ResumeBulletItem, index: number) => (
+            <li key={index} className="text text-base mb-2">
+              <BoldTextInString
+                text={item.text}
+                boldText={item.boldText}
+              ></BoldTextInString>
+            </li>
+          )
+        )}
       </ul>
     </div>
   );

@@ -1,8 +1,10 @@
+import ResumeBulletItem from "./ResumeBulletItem";
+
 interface ResumeProps {
   header: string;
   subheader: string;
   timeFrame?: string;
-  bulletItems: string[];
+  bulletItems: ResumeBulletItem[];
 }
 
 export default ResumeProps;
