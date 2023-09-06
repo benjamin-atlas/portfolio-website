@@ -10,8 +10,8 @@ const Portfolio = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   };
 
   return (
@@ -34,7 +34,7 @@ const Portfolio = () => {
           />
           <PortfolioItem
             portfolioItemInfo={{
-              title: "Jeff Nippard Workout Tracker",
+              title: "Workout Tracker",
               description:
                 "Ionic mobile app used for simple data entry based on programs from popular fitness influencer, Jeff Nippard. I literally use it every day (not joking). Lets the user track each day's workout schedule and save information like volume and rate of perceived exertion (RPE)",
               images: [],
@@ -52,7 +52,7 @@ const Portfolio = () => {
               teamSize: "Solo",
             }}
           />
-          <PortfolioItem
+          {/* <PortfolioItem
             portfolioItemInfo={{
               title: "Rap God",
               description: "Rap app",
@@ -60,7 +60,7 @@ const Portfolio = () => {
               technologiesUsed: [],
               teamSize: "Solo",
             }}
-          />
+          /> */}
           <PortfolioItem
             portfolioItemInfo={{
               title: "arcc-Mobile",
@@ -70,7 +70,7 @@ const Portfolio = () => {
               teamSize: "5 developers",
             }}
           />
-          <PortfolioItem
+          {/* <PortfolioItem
             portfolioItemInfo={{
               title: "File Mover",
               description: "Bloop",
@@ -87,7 +87,7 @@ const Portfolio = () => {
               technologiesUsed: [],
               teamSize: "Solo",
             }}
-          />
+          /> */}
         </Slider>
       </div>
     </MajorSection>
