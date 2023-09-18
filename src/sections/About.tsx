@@ -5,6 +5,7 @@ import StatCardInfo from "../interfaces/StatCardInfo";
 import StatCard from "../utilities/StatCard";
 import SectionHeader from "../utilities/SectionHeader";
 import kayakPic from "../../src/assets/kayak.jpg";
+import useWebSocket from "react-use-websocket";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -30,23 +31,50 @@ const About = () => {
     { label: "Degree", value: "Bachelor of Science, Computer Science" },
   ]);
 
-  const [statCards, _setStatCards] = useState([
-    {
-      icon: faFaceSmile,
-      value: 7241,
-      description: `Commits to Github`,
+  const [statCards, setStatCards]: [StatCardInfo[], Function] = useState([]);
+
+  const WS_URL = "ws://172.21.180.138:8080";
+  const { sendJsonMessage } = useWebSocket(WS_URL, {
+    onOpen: () => {
+      console.log("WebSocket connection established.");
     },
-    {
-      icon: faHeadphones,
-      value: 10241,
-      description: "Lines of code written.",
+    onMessage: (msg: any) => {
+      const msgJson: any = JSON.parse(msg.data);
+
+      if (!msgJson.error) {
+        setStatCards([
+          {
+            icon: faFaceSmile,
+            value: msgJson.commits,
+            description: `Commits to Github`,
+          },
+          {
+            icon: faHeadphones,
+            value: msgJson.linesOfCodeWritten,
+            description: "Lines of code written.",
+          },
+          {
+            icon: faUsers,
+            value: msgJson.mergedPRs,
+            description: "Pull requests reviewed or merged",
+          },
+          {
+            icon: faNotesMedical,
+            value: msgJson.repositoriesContributed,
+            description: "Repositories Contributed",
+          },
+        ]);
+      } else {
+        console.error(`Malformatted message received: ${msg}`);
+      }
     },
-    { icon: faUsers, value: 1341, description: "Pull requests reviewed" },
-    { icon: faNotesMedical, value: 501, description: "Issues closed" },
-  ]);
+  });
 
   useEffect(() => {
     setYearsDeveloping(getYearDifferenceFromDate("2017-01-01"));
+    sendJsonMessage({
+      messageType: "GHS",
+    });
   }, []);
 
   return (

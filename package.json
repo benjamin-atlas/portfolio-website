@@ -20,6 +20,7 @@
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
     "react-slick": "^0.29.0",
+    "react-use-websocket": "^4.4.0",
     "short-uuid": "^4.2.2",
     "slick-carousel": "^1.8.1"
   },
