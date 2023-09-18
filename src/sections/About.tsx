@@ -49,6 +49,8 @@ const About = () => {
     onMessage: (msg: any) => {
       const msgJson: any = JSON.parse(msg.data);
 
+      setLastValues(msgJson);
+
       if (!msgJson.error) {
         setStatCards([
           {
@@ -76,8 +78,6 @@ const About = () => {
             description: "Repositories Contributed",
           },
         ]);
-
-        setLastValues(msgJson);
       } else {
         console.error(`Malformatted message received: ${msg}`);
       }
