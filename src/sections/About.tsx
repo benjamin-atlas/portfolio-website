@@ -32,12 +32,12 @@ const About = () => {
   ]);
 
   const [statCards, setStatCards]: [StatCardInfo[], Function] = useState([]);
-  let lastValues: any = {
+  const [lastValues, setLastValues]: [any, Function] = useState({
     commits: 0,
     mergedPRs: 0,
     linesOfCodeWritten: 0,
     repositoriesContributed: 0,
-  };
+  });
 
   const WS_URL = "ws://172.21.180.138:8080";
   const { sendJsonMessage } = useWebSocket(WS_URL, {
@@ -77,7 +77,7 @@ const About = () => {
           },
         ]);
 
-        lastValues = msgJson;
+        setLastValues(msgJson);
       } else {
         console.error(`Malformatted message received: ${msg}`);
       }
