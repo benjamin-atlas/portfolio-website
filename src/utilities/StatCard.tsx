@@ -13,7 +13,7 @@ const StatCard = ({ statCardInfo }: { statCardInfo: StatCardInfo }) => {
         <CountUp
           end={statCardInfo.currentValue}
           duration={3}
-          startVal={statCardInfo.startValue}
+          start={statCardInfo.startValue}
         >
           {({ countUpRef, start }) => (
             <ScrollTrigger triggerOnce={true} onScrollStateChanged={start}>
