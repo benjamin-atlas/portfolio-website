@@ -32,11 +32,19 @@ const About = () => {
   ]);
 
   const [statCards, setStatCards]: [StatCardInfo[], Function] = useState([]);
+  let lastValues: any = {
+    commits: 0,
+    mergedPRs: 0,
+    linesOfCodeWritten: 0,
+    repositoriesContributed: 0,
+  };
 
   const WS_URL = "ws://172.21.180.138:8080";
   const { sendJsonMessage } = useWebSocket(WS_URL, {
     onOpen: () => {
-      console.log("WebSocket connection established.");
+      sendJsonMessage({
+        messageType: "GHS",
+      });
     },
     onMessage: (msg: any) => {
       const msgJson: any = JSON.parse(msg.data);
@@ -45,25 +53,31 @@ const About = () => {
         setStatCards([
           {
             icon: faFaceSmile,
-            value: msgJson.commits,
+            startValue: lastValues.commits,
+            currentValue: msgJson.commits,
             description: `Commits to Github`,
           },
           {
             icon: faHeadphones,
-            value: msgJson.linesOfCodeWritten,
+            startValue: lastValues.linesOfCodeWritten,
+            currentValue: msgJson.linesOfCodeWritten,
             description: "Lines of code written.",
           },
           {
             icon: faUsers,
-            value: msgJson.mergedPRs,
+            startValue: lastValues.mergedPRs,
+            currentValue: msgJson.mergedPRs,
             description: "Pull requests reviewed or merged",
           },
           {
             icon: faNotesMedical,
-            value: msgJson.repositoriesContributed,
+            startValue: lastValues.repositoriesContributed,
+            currentValue: msgJson.repositoriesContributed,
             description: "Repositories Contributed",
           },
         ]);
+
+        lastValues = msgJson;
       } else {
         console.error(`Malformatted message received: ${msg}`);
       }
@@ -72,9 +86,6 @@ const About = () => {
 
   useEffect(() => {
     setYearsDeveloping(getYearDifferenceFromDate("2017-01-01"));
-    sendJsonMessage({
-      messageType: "GHS",
-    });
   }, []);
 
   return (

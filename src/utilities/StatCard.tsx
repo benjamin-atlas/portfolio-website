@@ -10,7 +10,11 @@ const StatCard = ({ statCardInfo }: { statCardInfo: StatCardInfo }) => {
         <FontAwesomeIcon icon={statCardInfo.icon}></FontAwesomeIcon>
       </div>
       <div className="col-span-2">
-        <CountUp end={statCardInfo.value} duration={3}>
+        <CountUp
+          end={statCardInfo.currentValue}
+          duration={3}
+          startVal={statCardInfo.startValue}
+        >
           {({ countUpRef, start }) => (
             <ScrollTrigger triggerOnce={true} onScrollStateChanged={start}>
               <span ref={countUpRef} className="text-6xl font-extrabold"></span>
