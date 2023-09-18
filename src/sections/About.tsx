@@ -10,11 +10,11 @@ import useWebSocket from "react-use-websocket";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleRight,
-  faFaceSmile,
-  faHeadphones,
-  faUsers,
-  faNotesMedical,
+  faCode,
+  faCodeCommit,
+  faCodePullRequest,
 } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import MajorSection from "../utilities/MajorSection";
 
 const About = () => {
@@ -54,25 +54,25 @@ const About = () => {
       if (!msgJson.error) {
         setStatCards([
           {
-            icon: faFaceSmile,
+            icon: faCodeCommit,
             startValue: lastValues.commits,
             currentValue: msgJson.commits,
             description: `Commits to Github`,
           },
           {
-            icon: faHeadphones,
+            icon: faCode,
             startValue: lastValues.linesOfCodeWritten,
             currentValue: msgJson.linesOfCodeWritten,
             description: "Lines of code written.",
           },
           {
-            icon: faUsers,
+            icon: faCodePullRequest,
             startValue: lastValues.mergedPRs,
             currentValue: msgJson.mergedPRs,
             description: "Pull requests reviewed or merged",
           },
           {
-            icon: faNotesMedical,
+            icon: faGithub,
             startValue: lastValues.repositoriesContributed,
             currentValue: msgJson.repositoriesContributed,
             description: "Repositories Contributed",
