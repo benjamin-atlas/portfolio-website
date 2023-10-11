@@ -39,6 +39,8 @@ const About = () => {
     repositoriesContributed: 0,
   });
 
+  const [lastUpdated, setLastUpdated]: [string, Function] = useState(getCurrentTime());
+
   const WS_URL: string = import.meta.env.VITE_WS_URL;
   const { sendJsonMessage } = useWebSocket(WS_URL, {
     onOpen: () => {
@@ -50,6 +52,7 @@ const About = () => {
       setLastValues(msgJson);
 
       if (!msgJson.error) {
+        setLastUpdated(getCurrentTime())
         setStatCards([
           {
             icon: faCodeCommit,
@@ -163,7 +166,7 @@ const About = () => {
       <p className="italic text-base">
         Note: these metrics are populated in real time via WebSockets hosted on
         AWS. If you see this move, I'm working on something. If not, hopefully
-        I'm doing something fun!
+        I'm doing something fun! Last updated: {lastUpdated.toString()}
       </p>
     </MajorSection>
   );
@@ -177,6 +180,10 @@ function getYearDifferenceFromDate(dateString: string) {
   const yearsDifference = timeDifference / millisecondsPerYear;
 
   return Math.floor(yearsDifference);
+}
+
+function getCurrentTime(): string {
+  return new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
 }
 
 export default About;
