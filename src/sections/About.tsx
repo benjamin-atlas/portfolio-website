@@ -39,12 +39,10 @@ const About = () => {
     repositoriesContributed: 0,
   });
 
-  const WS_URL = "ws://172.21.180.138:8080";
+  const WS_URL: string = import.meta.env.VITE_WS_URL;
   const { sendJsonMessage } = useWebSocket(WS_URL, {
     onOpen: () => {
-      sendJsonMessage({
-        messageType: "GHS",
-      });
+      sendJsonMessage({ action: "initial-metrics" });
     },
     onMessage: (msg: any) => {
       const msgJson: any = JSON.parse(msg.data);
@@ -153,16 +151,20 @@ const About = () => {
       <SectionHeader>Facts</SectionHeader>
       <p>
         I have worked collaboratively with dozens of extremely talented
-        developers since 2017, heavily engaging in agile/scrum practices. Here
-        are some real-time metrics.
+        developers since 2017, heavily engaging in agile/scrum practices.
       </p>
-      <div className="flex w-full pt-10">
+      <div className="flex w-full pt-10 mb-10">
         {statCards.map((statCardInfo: StatCardInfo, index: number) => (
           <div key={index} className="flex-1 justify-center">
             <StatCard statCardInfo={statCardInfo}></StatCard>
           </div>
         ))}
       </div>
+      <p className="italic text-base">
+        Note: these metrics are populated in real time via WebSockets hosted on
+        AWS. If you see this move, I'm working on something. If not, hopefully
+        I'm doing something fun!
+      </p>
     </MajorSection>
   );
 };
