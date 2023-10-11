@@ -10,7 +10,7 @@ const SimulatedTypingText = (props: { prefix: string; words: string[] }) => {
   const [typing, setTyping] = useState(true);
 
   useEffect(() => {
-    const intervalId: number = setInterval(() => {
+    const intervalId: NodeJS.Timeout = setInterval(() => {
       let randomIndex: number = Math.floor(Math.random() * props.words.length);
       let newText: string = props.words[randomIndex];
 
@@ -29,7 +29,7 @@ const SimulatedTypingText = (props: { prefix: string; words: string[] }) => {
   }, [backspacing]);
 
   useEffect(() => {
-    const intervalId: number = setInterval(() => {
+    const intervalId: NodeJS.Timeout = setInterval(() => {
       if (backspacing) {
         // Reuse start of string if it matches the next word, like real life!
         if (
