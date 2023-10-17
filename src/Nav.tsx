@@ -120,7 +120,7 @@ const Nav = () => {
 
   return (
     <>
-      <div className="bg-black col-span-2 text-center font-poppins flex justify-center">
+      <div className="bg-black col-span-2 text-center font-poppins justify-center hidden xl:flex">
         <div className="fixed top-[50%] translate-y-[-50%]">
           <div className="rounded-full bg-indigo-50 h-[125px] w-[125px] text-black mt-5 mb-2 inline-block overflow-hidden border-8 border-gray-800">
             <img src={profilePic} />

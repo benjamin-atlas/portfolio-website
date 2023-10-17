@@ -5,11 +5,11 @@ import ScrollTrigger from "./ScrollTrigger";
 
 const StatCard = ({ statCardInfo }: { statCardInfo: StatCardInfo }) => {
   return (
-    <div className="grid grid-cols-3 gap-4 font-sans">
-      <div className="col-span-1 text-blue-400 text-7xl text-right">
+    <div className="grid grid-cols-5 gap-4 font-sans">
+      <div className="col-span-1 text-blue-400 text-4xl text-right">
         <FontAwesomeIcon icon={statCardInfo.icon}></FontAwesomeIcon>
       </div>
-      <div className="col-span-2">
+      <div className="col-span-4">
         <CountUp
           end={statCardInfo.currentValue}
           duration={3}
@@ -17,7 +17,7 @@ const StatCard = ({ statCardInfo }: { statCardInfo: StatCardInfo }) => {
         >
           {({ countUpRef, start }) => (
             <ScrollTrigger triggerOnce={true} onScrollStateChanged={start}>
-              <span ref={countUpRef} className="text-6xl font-extrabold"></span>
+              <span ref={countUpRef} className="text-5xl font-extrabold"></span>
             </ScrollTrigger>
           )}
         </CountUp>

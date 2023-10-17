@@ -3,7 +3,7 @@ import ScrollTrigger from "./ScrollTrigger";
 
 const SkillBar = (props: { skillInfo: SkillInfo }) => {
   return (
-    <div className="grid grid-cols-2 gap-x-4 gap-y-2 font-poppins">
+    <div className="grid grid-cols-2 gap-x-4 gap-y-2 font-poppins col-span-2 2xl:col-span-1">
       <label className="col-span-1 text-sm font-semibold">
         {props.skillInfo.name}
       </label>

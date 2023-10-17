@@ -51,7 +51,7 @@ const Services = () => {
   ]);
   return (
     <MajorSection sectionName="services" header="Services">
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4">
         {services.map((service: ServiceInfo, index: number) => (
           <ServiceItem
             key={index}

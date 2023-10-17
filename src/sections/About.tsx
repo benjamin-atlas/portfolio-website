@@ -156,9 +156,9 @@ const About = () => {
         I have worked collaboratively with dozens of extremely talented
         developers since 2017, heavily engaging in agile/scrum practices.
       </p>
-      <div className="flex w-full pt-10 mb-10">
+      <div className="flex w-full pt-10 mb-10 grid grid-cols-4 gap-8">
         {statCards.map((statCardInfo: StatCardInfo, index: number) => (
-          <div key={index} className="flex-1 justify-center">
+          <div key={index} className="col-span-4 xl:col-span-2 2xl:col-span-1 justify-center">
             <StatCard statCardInfo={statCardInfo}></StatCard>
           </div>
         ))}

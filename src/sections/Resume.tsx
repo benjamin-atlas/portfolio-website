@@ -4,7 +4,7 @@ import MajorSection from "../utilities/MajorSection";
 const Resume = () => {
   return (
     <MajorSection sectionName="resume" header="Resume">
-      <div className="w-1/2 inline-block">
+      <div className="w-full 2xl:w-1/2 inline-block mb-4 ">
         <p className="text-2xl font-bold mb-4">Summary</p>
         <ResumeItem
           resumeProps={{
@@ -33,7 +33,7 @@ const Resume = () => {
           }}
         />
       </div>
-      <div className="w-1/2 inline-block align-top">
+      <div className="w-full 2xl:w-1/2 inline-block align-top">
         <p className="text-2xl font-bold mb-4">Professional Experience</p>
         <ResumeItem
           resumeProps={{
