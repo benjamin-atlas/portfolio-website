@@ -16,7 +16,7 @@ const MajorSection = ({
       id={`${sectionName}-section`}
       className={`relative ${
         bgColor ? bgColor : "bg-white"
-      } text-black font-raleway w-full text-xl pl-32 pr-32 pb-10`}
+      } text-black font-raleway w-full text-xl pl-16 pr-16 2xl:pl-32 2xl:pr-32 pb-10`}
     >
       <SectionHeader>{header}</SectionHeader>
       {children}

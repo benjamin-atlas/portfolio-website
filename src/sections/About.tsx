@@ -119,10 +119,10 @@ const About = () => {
         triggerOnce={true}
       >
         <div className="grid grid-cols-12 gap-8 pr-10 pb-10 pt-10">
-          <div className="col-span-3 overflow-hidden">
+          <div className="col-span-12 2xl:col-span-3 overflow-hidden">
             <img src={kayakPic} className="object-cover h-auto w-full" />
           </div>
-          <div className="col-span-9">
+          <div className="col-span-12 2xl:col-span-9">
             <h2 className="text-2xl font-bold mb-4">
               Full Stack Web Developer
             </h2>
@@ -134,7 +134,7 @@ const About = () => {
               back-end engineer, software architect, dev ops coordinator, and
               mentor.
             </p>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 2xl:grid-cols-2 gap-4">
               {aboutInfo.map((aboutInfo: AboutInfo, index: number) => (
                 <div key={index}>
                   <FontAwesomeIcon
@@ -158,7 +158,7 @@ const About = () => {
       </p>
       <div className="flex w-full pt-10 mb-10 grid grid-cols-4 gap-8">
         {statCards.map((statCardInfo: StatCardInfo, index: number) => (
-          <div key={index} className="col-span-4 xl:col-span-2 2xl:col-span-1 justify-center">
+          <div key={index} className="col-span-4 md:col-span-2 2xl:col-span-1 justify-center">
             <StatCard statCardInfo={statCardInfo}></StatCard>
           </div>
         ))}
