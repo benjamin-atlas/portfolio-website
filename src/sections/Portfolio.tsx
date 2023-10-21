@@ -30,8 +30,8 @@ const Portfolio = () => {
               title: "arcc-Clinical",
               descriptionPoints: [
                 "Angular web app used by thousands of doctors and clinicans across the United States and Canada for secure viewing and management of medical images. We built this application from the ground up in 2017 and since starting I have a role at every level, from UI/UX design to REST API development to database.",
-                "Apollo is curently doing a full UI overhaul of arcc-Clinical as we speak and we are getting very excited to share an even more modern, streamlined design!",
-                "As a development team lead, I contribute heavily to new features at all steps, from design to publish. I also have conducted well over a thousand code reviews. I actually have a reputation at work for having probably the most discerning eye in the review process."
+                "As a development team lead, I contribute heavily to new features at all steps, from design to publish. I also have conducted well over a thousand code reviews. I actually have a reputation at work for having probably the most discerning eye in the review process.",
+                "Apollo is curently doing a full UI overhaul of arcc-Clinical as we speak and we are getting very excited to share an even more modern, streamlined design!"
               ],
               images: [clinical1],
               technologiesUsed: [
@@ -72,10 +72,10 @@ const Portfolio = () => {
             portfolioItemInfo={{
               title: "Perfect Blackjack Strategy",
               descriptionPoints: [
-                "At the time of writing, our development team at Apollo is preparing to go to AWS re:Invent 2023 in Las Vegas. One of my best friends (and team mate) have a running joke that we like to try to learn perfect blackjack strategy every few years.",
-                "This year, I decided to make a tool to help us actually practice and learn.",
+                "At the time of writing, our development team at Apollo is preparing to go to AWS re:Invent 2023 in Las Vegas. One of my best friends (and team mate) and I have a running joke that we like to try to learn perfect blackjack strategy every few years.",
+                "This year, I decided to make a tool to help us actually practice and learn. It isn't a fully-functioning blackjack simulator, its just meant to train the user to make the correct decision based on the hand. It tracks your high score and even has a nifty chart to reference as you learn!",
                 "I also used this project as an excuse to learn Vue 3 and get some artsy-energy out. The design is heavily inspired by a game I love called Tunic, which is a low-poly puzzle platformer in an isometric perspective.",
-                "I know the cards didn't have to isomorphic, but I do what I want."
+                "I know the cards didn't have to isometric, but I do what I want. Try to beat my high score!"
               ],
               images: [blackjack1],
               technologiesUsed: [
