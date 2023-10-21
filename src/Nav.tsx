@@ -104,7 +104,7 @@ const Nav = () => {
             const scrolledMenuItem: MenuItem | undefined = menuItems.find(
               (item) => item.id === targetId
             );
-            if (scrolledMenuItem) {
+            if (scrolledMenuItem && !scrolledMenuItem.active) {
               setActiveMenuItem(scrolledMenuItem);
             }
           }
