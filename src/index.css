@@ -9,3 +9,23 @@
 .absolute-center {
   @apply absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%];
 }
+
+/* ----- Overrides ----- */
+.slick-prev {
+  left: 2%;
+  z-index: 1;
+}
+
+.slick-next {
+  right: 3px;
+}
+
+.slick-list, .slick-track, .slick-slide > * {
+  height: 100%;
+}
+
+.info-panel {
+  transition: top 200ms ease-in-out;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
