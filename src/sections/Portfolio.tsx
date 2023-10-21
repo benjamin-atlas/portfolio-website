@@ -19,7 +19,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="relative">
+    <section id="portfolio-section" className="relative">
       <div className="info-panel absolute top-[10px] left-[10px] p-2 text-2xl z-10">
         My Portfolio
       </div>
@@ -87,58 +87,9 @@ const Portfolio = () => {
               myRole: "Sole Developer",
             }}
           />
-          {/* <PortfolioItem
-            portfolioItemInfo={{
-              title: "Rap God",
-              descriptionPoints: ["Rap app",],
-              images: [],
-              technologiesUsed: [],
-              myRole: "Sole Developer",
-            }}
-          /> */}
-          {/* <PortfolioItem
-            portfolioItemInfo={{
-              title: "arcc-Mobile",
-              descriptionPoints: ["Yeah yeah yeah!"],
-              images: [],
-              technologiesUsed: [],
-              teamSize: "5 developers",
-              myRole: "Development Team Lead",
-            }}
-          />
-          <PortfolioItem
-            portfolioItemInfo={{
-              title: "Workout Tracker",
-              descriptionPoints: [
-                "Ionic mobile app used for simple data entry based on programs from popular fitness influencer, Jeff Nippard. I literally use it every day (not joking). Lets the user track each day's workout schedule and save information like volume and rate of perceived exertion (RPE)",
-              ],
-              images: [],
-              technologiesUsed: [],
-              myRole: "Sole Developer",
-            }}
-          /> */}
-          {/* <PortfolioItem
-            portfolioItemInfo={{
-              title: "File Mover",
-              descriptionPoints: ["Bloop",],
-              images: [],
-              technologiesUsed: [],
-              teamSize: "5 developers",
-              myRole: "Project Owner",
-            }}
-          />
-          <PortfolioItem
-            portfolioItemInfo={{
-              title: "Dicom Ingester",
-              descriptionPoints: ["",],
-              images: [],
-              technologiesUsed: [],
-              teamSize: "2 developers",
-            }}
-          /> */}
         </Slider>
       </div>
-    </div>
+    </section>
   );
 };
 
