@@ -7,7 +7,7 @@ import Skills from "./sections/Skills";
 
 const ScrollWindow = () => {
   return (
-    <div id="scroll-window" className="col-span-12 xl:col-span-10 bg-indigo-900">
+    <div id="scroll-window" className="col-span-12 xl:col-span-10 bg-indigo-900 overflow-x-hidden">
       <Landing></Landing>
       <About></About>
       <Skills></Skills>
