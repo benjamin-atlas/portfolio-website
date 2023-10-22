@@ -48,6 +48,7 @@ const Portfolio = () => {
               ],
               teamSize: "Over a dozen developers.",
               myRole: "Development Team Lead",
+              link: "https://apolloei.com/",
             }}
           />
           <PortfolioItem
@@ -94,6 +95,7 @@ const Portfolio = () => {
                 "Amplify Git-integrated Deployments",
               ],
               myRole: "Sole Developer",
+              link: "https://blackjack.benjaminatlas.dev/",
             }}
           />
         </Slider>

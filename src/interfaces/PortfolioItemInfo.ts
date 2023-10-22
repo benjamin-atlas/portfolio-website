@@ -7,6 +7,7 @@ interface PortfolioItemInfo {
   technologiesUsed: string[];
   teamSize?: string;
   myRole?: string;
+  link?: string;
 }
 
 export default PortfolioItemInfo;
