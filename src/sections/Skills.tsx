@@ -5,9 +5,10 @@ import SkillInfo from "../interfaces/SkillInfo";
 
 const Skills = () => {
   const [skillBars, _setSkillBars] = useState([
-    { name: "JavaScript", percentage: 85 },
     { name: "Angular", percentage: 90 },
-    { name: "React", percentage: 60 },
+    { name: "JavaScript", percentage: 85 },
+    { name: "React", percentage: 80 },
+    { name: "Vue 3", percentage: 60 },
     { name: "HTML/CSS", percentage: 90 },
     { name: "C#.NET", percentage: 85 },
     { name: "VB.NET", percentage: 85 },

@@ -61,7 +61,7 @@ const Portfolio = () => {
                 "Frontend: React",
                 "Tailwind",
                 "TypeScript",
-                "ws (Websocket Library for NodeJS projects",
+                "ws (Websocket Library for NodeJS projects)",
                 "Backend (AWS): Lambda",
                 "API Gateway",
                 "DynamoDB",
@@ -70,6 +70,7 @@ const Portfolio = () => {
                 "Amplify Git-integrated Deployments",
               ],
               myRole: "Sole Developer",
+              link: "https://github.com/benjamin-atlas/portfolio-website/"
             }}
           />
           <PortfolioItem
@@ -77,7 +78,7 @@ const Portfolio = () => {
               title: "Perfect Blackjack Strategy",
               descriptionPoints: [
                 "At the time of writing, our development team at Apollo is preparing to go to AWS re:Invent 2023 in Las Vegas. One of my best friends (and team mate) and I have a running joke that we like to try to learn perfect blackjack strategy every few years. This year, I decided to make a tool to help us actually practice and learn. It tracks your high score and even has a nifty chart to reference as you learn!",
-                "I also used this project as an excuse to learn Vue 3 and get some artsy-energy out. The design is heavily inspired by a game I love called Tunic, which is a low-poly puzzle platformer in an isometric perspective.",
+                "I also used this project as an outlet to learn Vue 3 and get some artsy-energy out. The design is heavily inspired by a game I love called Tunic, which is a low-poly puzzle platformer in an isometric perspective.",
                 "I know the cards didn't have to be isometric, but I do what I want. Try to beat my high score!",
               ],
               images: [

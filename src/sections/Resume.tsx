@@ -105,7 +105,7 @@ const Resume = () => {
               },
               {
                 text: "Integrated several third-party softwares and libraries into our software system and worked closely with the representatives from their respective companies.",
-                boldText: ["third-party", "softwares", "and", "libraries"],
+                boldText: ["third-party", "softwares", "libraries"],
               },
               {
                 text: "Since March 2020, have been successfully performing all of the above responsibilities 100% remotely.",
