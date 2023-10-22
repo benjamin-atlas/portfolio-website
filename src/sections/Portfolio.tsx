@@ -23,7 +23,7 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio-section" className="relative">
-      <div className="info-panel absolute top-[10px] left-[10px] p-2 text-2xl z-10">
+      <div className="info-panel absolute top-[10px] right-[10px] p-2 text-2xl z-10">
         My Portfolio
       </div>
       <div className="w-full h-[90vh] md:h-[70vh] ">
@@ -33,8 +33,7 @@ const Portfolio = () => {
               title: "arcc-Clinical",
               descriptionPoints: [
                 "Angular web app used by thousands of doctors and clinicans across the United States and Canada for secure viewing and management of medical images. We built this application from the ground up in 2017 and since starting I have a role at every level, from UI/UX design to REST API development to database.",
-                "As a development team lead, I contribute heavily to new features at all steps, from design to publish. I also have conducted well over a thousand code reviews. I actually have a reputation at work for having probably the most discerning eye in the review process.",
-                "Apollo is curently doing a full UI overhaul of arcc-Clinical as we speak and we are getting very excited to share an even more modern, streamlined design!",
+                "As a development team lead, I contribute heavily to new features at all steps, from design to publish. I also have conducted well over a thousand code reviews. I actually have a reputation at work for having probably the most discerning eye in the review process."
               ],
               images: [
                 { fullQualityPath: clinical1, mobileQualityPath: clinical1 },
