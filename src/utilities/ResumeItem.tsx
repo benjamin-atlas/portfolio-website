@@ -1,15 +1,11 @@
 import ResumeBulletItem from "../interfaces/ResumeBulletItem";
 import ResumeProps from "../interfaces/ResumeProps";
 import BoldTextInString from "./BoldTextInString";
-import ScrollTrigger from "./ScrollTrigger";
 
 const ResumeItem = (props: { resumeProps: ResumeProps }) => {
   return (
     <div className="font-poppins font-thin border-l-4 border-blue-400 pl-4 pr-4 relative">
-      <ScrollTrigger
-        initialClassName="rounded-full w-[20px] h-[20px] border-4 border-blue-400 absolute top-[100%] transition-[top] duration-[1000ms] ease-in-out left-[-2px] translate-x-[-50%] bg-white"
-        triggerStyles={{ top: "0%" }}
-      ></ScrollTrigger>
+      <div className="rounded-full w-[20px] h-[20px] border-4 border-blue-400 absolute top-[0] transition-[top] duration-[1000ms] ease-in-out left-[-2px] translate-x-[-50%] bg-white"></div>
       <div className="mb-3 font-semibold">{props.resumeProps.header}</div>
       <div className="italic mb-3 text-base">{props.resumeProps.subheader}</div>
       {props.resumeProps.timeFrame && (
@@ -20,7 +16,7 @@ const ResumeItem = (props: { resumeProps: ResumeProps }) => {
       <ul className="list-disc ml-10">
         {props.resumeProps.bulletItems.map(
           (item: ResumeBulletItem, index: number) => (
-            <li key={index} className="text text-base mb-2">
+            <li key={index} className="text text-sm md:text-base mb-2">
               <BoldTextInString
                 text={item.text}
                 boldText={item.boldText}

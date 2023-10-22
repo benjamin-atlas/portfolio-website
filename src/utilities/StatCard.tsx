@@ -17,11 +17,11 @@ const StatCard = ({ statCardInfo }: { statCardInfo: StatCardInfo }) => {
         >
           {({ countUpRef, start }) => (
             <ScrollTrigger triggerOnce={true} onScrollStateChanged={start}>
-              <span ref={countUpRef} className="text-5xl font-extrabold"></span>
+              <span ref={countUpRef} className="text-4xl md:text-5xl font-extrabold"></span>
             </ScrollTrigger>
           )}
         </CountUp>
-        <div className="text-lg">{statCardInfo.description}</div>
+        <div className="text-base md:text-lg">{statCardInfo.description}</div>
       </div>
     </div>
   );

@@ -39,7 +39,9 @@ const About = () => {
     repositoriesContributed: 0,
   });
 
-  const [lastUpdated, setLastUpdated]: [string, Function] = useState(getCurrentTime());
+  const [lastUpdated, setLastUpdated]: [string, Function] = useState(
+    getCurrentTime()
+  );
 
   const WS_URL: string = import.meta.env.VITE_WS_URL;
   const { sendJsonMessage } = useWebSocket(WS_URL, {
@@ -52,7 +54,7 @@ const About = () => {
       setLastValues(msgJson);
 
       if (!msgJson.error) {
-        setLastUpdated(getCurrentTime())
+        setLastUpdated(getCurrentTime());
         setStatCards([
           {
             icon: faCodeCommit,
@@ -126,15 +128,17 @@ const About = () => {
             <h2 className="text-2xl font-bold mb-4">
               Full Stack Web Developer
             </h2>
-            <p className="italic mb-8 text-lg">
+            <p className="italic mb-4 text-base md:text-lg">
               I have written multiple large-scale medical imaging applications
-              at all levels of the development stack. Working most of my career
-              from a small company, I have learned to wear multiple hats with
-              mission-critical responsibilities as a front-end engineer,
-              back-end engineer, software architect, dev ops coordinator, and
-              mentor.
+              at all levels of the development stack.
             </p>
-            <div className="grid grid-cols-1 2xl:grid-cols-2 gap-4">
+            <p className="italic mb-8 text-base md:text-lg">
+              Working most of my career from a small company, I have learned to
+              wear multiple hats with mission-critical responsibilities as a
+              front-end engineer, back-end engineer, software architect, dev ops
+              coordinator, and mentor.
+            </p>
+            <div className="grid grid-cols-1 2xl:grid-cols-2 gap-4 text-base md:text-lg">
               {aboutInfo.map((aboutInfo: AboutInfo, index: number) => (
                 <div key={index}>
                   <FontAwesomeIcon
@@ -144,7 +148,7 @@ const About = () => {
                   <label className="inline font-semibold">
                     {aboutInfo.label}:
                   </label>
-                  <p className="inline ml-5">{aboutInfo.value}</p>
+                  <p className="inline ml-2 md:ml-5">{aboutInfo.value}</p>
                 </div>
               ))}
             </div>
@@ -158,15 +162,24 @@ const About = () => {
       </p>
       <div className="flex w-full pt-10 mb-10 grid grid-cols-4 gap-8">
         {statCards.map((statCardInfo: StatCardInfo, index: number) => (
-          <div key={index} className="col-span-4 md:col-span-2 2xl:col-span-1 justify-center">
+          <div
+            key={index}
+            className="col-span-4 md:col-span-2 2xl:col-span-1 justify-center"
+          >
             <StatCard statCardInfo={statCardInfo}></StatCard>
           </div>
         ))}
       </div>
-      <p className="italic text-base">
+      <p className="italic text-sm md:text-base mb-2">
         Note: these metrics are populated in real time via WebSockets hosted on
-        AWS. If you see this move, I'm working on something. If not, hopefully
-        I'm doing something fun! Last updated: {lastUpdated.toString()}
+        AWS.
+      </p>
+      <p className="italic text-sm md:text-base mb-2">
+        If you see this move, I'm working on something. If not, hopefully I'm
+        doing something fun!
+      </p>
+      <p className="italic text-sm md:text-base">
+        Last updated: {lastUpdated.toString()}
       </p>
     </MajorSection>
   );
@@ -183,7 +196,12 @@ function getYearDifferenceFromDate(dateString: string) {
 }
 
 function getCurrentTime(): string {
-  return new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
+  return new Date().toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    hour12: true,
+  });
 }
 
 export default About;
