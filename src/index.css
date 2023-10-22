@@ -29,3 +29,8 @@
   background: rgba(25, 25, 25, 0.2);
   backdrop-filter: blur(10px);
 }
+
+/* ----- Global ----- */
+a {
+  text-decoration: underline;
+}

@@ -3,6 +3,7 @@ import Landing from "./sections/Landing";
 import Portfolio from "./sections/Portfolio";
 import Resume from "./sections/Resume";
 import Services from "./sections/Services";
+import Contact from "./sections/Contact";
 import Skills from "./sections/Skills";
 
 const ScrollWindow = () => {
@@ -14,6 +15,7 @@ const ScrollWindow = () => {
       <Resume></Resume>
       <Portfolio></Portfolio>
       <Services></Services>
+      <Contact></Contact>
     </div>
   );
 };
