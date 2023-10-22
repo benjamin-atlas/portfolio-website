@@ -5,11 +5,8 @@ import Slider from "react-slick";
 import PortfolioItem from "../utilities/PortfolioItem";
 
 import clinical1 from "../../src/assets/clinical-1.png";
-import clinical2 from "../../src/assets/clinical-2.png";
 import blackjack1 from "../../src/assets/blackjack-1.png";
-import blackjack2 from "../../src/assets/blackjack-2.png";
 import portfolio1 from "../../src/assets/portfolio-1.png";
-import portfolio2 from "../../src/assets/portfolio-2.png";
 
 const Portfolio = () => {
   const settings = {
