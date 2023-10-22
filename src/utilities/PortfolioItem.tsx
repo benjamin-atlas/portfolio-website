@@ -17,7 +17,7 @@ const PortfolioItem = ({
           <img className="w-full h-full object-contain" src={portfolioItemInfo.images[0].mobileQualityPath} />
         </picture>
 
-        <div className="info-panel absolute bottom-0 md:bottom-[10%] text-white p-8 w-[98%] flex justify-center drop-shadow-xl">
+        <div className="info-panel absolute bottom-0 md:bottom-[10%] text-white p-8 w-[98%] flex justify-center">
           <div className="h-full grid grid-cols-1 items-center max-w-[1500px]">
             <div>
               <h2 className="text-2xl mb-5">{portfolioItemInfo.title}</h2>
