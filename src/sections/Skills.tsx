@@ -17,11 +17,11 @@ const Skills = () => {
 
   return (
     <MajorSection sectionName="skills" header="Skills" bgColor="bg-blue-100">
-      <p className="italic mb-2 text-lg">
+      <p className="italic mb-2 text-base md:text-lg">
         My skills are predominantly with web-based frameworks. These are some of
         the tools I employ every day.
       </p>
-      <p className="italic mb-2 text-lg">
+      <p className="italic mb-2 text-base md:text-lg">
         I don't think I'll ever claim 100% for any one technology. There is
         always something new to learn and its something I very much enjoy about
         the process.
