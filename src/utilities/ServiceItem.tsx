@@ -11,8 +11,8 @@ const ServiceItem = ({
   icon: IconDefinition;
 }) => {
   return (
-    <div className="grid grid-cols-3 gap-8 font-poppin">
-      <div className="col-span-1 flex justify-end">
+    <div className="grid grid-cols-3 gap-8 font-poppin text-center md:text-left ">
+      <div className="col-span-3 md:col-span-1 flex justify-center md:justify-end">
         <div className="bg-blue-500 rounded-full relative w-[50px] h-[50px] xl:w-[75px] xl:h-[75px] col-span-1">
           <FontAwesomeIcon
             icon={icon}
@@ -20,7 +20,7 @@ const ServiceItem = ({
           ></FontAwesomeIcon>
         </div>
       </div>
-      <div className="col-span-2">
+      <div className="col-span-3 md:col-span-2 mb-4">
         <h3 className="text-lg font-semibold">{serviceName}</h3>
         <p className="text-base italic">{serviceInfo}</p>
       </div>
