@@ -13,18 +13,14 @@ import {
   faBars,
   faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  faTwitter,
-  faFacebook,
-  faInstagram,
-  faSkype,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import profilePic from "../src/assets/profile.jpg";
 
 import MenuItem from "./interfaces/MenuItem";
 import SocialButton from "./interfaces/SocialButton";
+
+import Resume from "./assets/Resume.pdf";
 
 const Nav = () => {
   const [menuItems, setMenuItems]: [MenuItem[], any] = useState([
@@ -76,11 +72,12 @@ const Nav = () => {
     useState(false);
 
   const socialButtons: SocialButton[] = [
-    { link: "", icon: faTwitter },
-    { link: "", icon: faFacebook },
-    { link: "", icon: faInstagram },
-    { link: "", icon: faSkype },
-    { link: "", icon: faLinkedin },
+    { link: "https://github.com/benjamin-atlas/", icon: faGithub },
+    {
+      link: "https://www.linkedin.com/in/benjamin-atlas-aa44a5121/",
+      icon: faLinkedin,
+    },
+    { link: Resume, icon: faFile },
   ];
 
   const setActiveMenuItem = (selectedMenuItem: MenuItem) => {
@@ -148,15 +145,16 @@ const Nav = () => {
           </div>
           <h1 className="text-2xl font-semibold mb-5">Ben Atlas</h1>
           <div className="w-full flex justify-center">
-            <div className="grid grid-cols-5 gap-3 mb-10">
+            <div className="grid grid-cols-3 gap-3 mb-10">
               {socialButtons.map(
                 (socialButton: SocialButton, index: number) => (
-                  <div
+                  <a
                     key={index}
                     className="col-span-1 cursor-pointer bg-gray-800 hover:bg-blue-400 transition duration-300 ease-in-out w-9 h-9 rounded-full flex justify-center items-center"
+                    href={socialButton.link}
                   >
                     <FontAwesomeIcon icon={socialButton.icon}></FontAwesomeIcon>
-                  </div>
+                  </a>
                 )
               )}
             </div>
