@@ -135,7 +135,7 @@ const Nav = () => {
         className={`bg-black col-span-2 text-center font-poppins justify-center ${
           mobileNavShowing
             ? "fixed top-0 left-[0%] w-[80%] md:w-[50%] xl:w-full h-full z-20 flex"
-            : "fixed xl:relative top-0 h-full w-[80%] md:w-[50%] xl:w-full left-[-100%] xl:left-0 z-20"
+            : "fixed xl:relative top-0 h-full w-[80%] md:w-[50%] xl:w-full left-[-100%] xl:left-0 z-20 flex"
         } xl:flex`}
         style={{ transition: "left 100ms ease-in-out" }}
       >
