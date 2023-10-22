@@ -23,10 +23,10 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio-section" className="relative">
-      <div className="info-panel absolute top-[-20px] left-[50%] translate-x-[-50%] md:top-[10px] md:left-[10px] md:translate-x-0 p-2 text-2xl z-10">
+      <div className="info-panel absolute top-[10px] left-[10px] p-2 text-2xl z-10">
         My Portfolio
       </div>
-      <div className="w-full h-screen md:h-[70vh] ">
+      <div className="w-full h-[90vh] md:h-[70vh] ">
         <Slider {...settings} className="w-full h-full">
           <PortfolioItem
             portfolioItemInfo={{
@@ -37,7 +37,7 @@ const Portfolio = () => {
                 "Apollo is curently doing a full UI overhaul of arcc-Clinical as we speak and we are getting very excited to share an even more modern, streamlined design!",
               ],
               images: [
-                { fullQualityPath: clinical1, mobileQualityPath: clinical2 },
+                { fullQualityPath: clinical1, mobileQualityPath: clinical1 },
               ],
               technologiesUsed: [
                 "Angular",
@@ -58,7 +58,7 @@ const Portfolio = () => {
                 "I also leveraged AWS tools such as Lambda and API Gateway to scrape and feed real-time metrics into this page via a websocket, which I think is ridiculously cool. You might actually see the values change in real-time if I'm actively working on something.",
               ],
               images: [
-                { fullQualityPath: portfolio1, mobileQualityPath: portfolio2 },
+                { fullQualityPath: portfolio1, mobileQualityPath: portfolio1 },
               ],
               technologiesUsed: [
                 "Frontend: React",
@@ -85,10 +85,10 @@ const Portfolio = () => {
                 "I know the cards didn't have to isometric, but I do what I want. Try to beat my high score!",
               ],
               images: [
-                { fullQualityPath: blackjack1, mobileQualityPath: blackjack2 },
+                { fullQualityPath: blackjack1, mobileQualityPath: blackjack1 },
               ],
               technologiesUsed: [
-                "Vue 3 (Composition)",
+                "Vue 3",
                 "TypeScript",
                 "Tailwind CSS",
                 "Amplify Git-integrated Deployments",

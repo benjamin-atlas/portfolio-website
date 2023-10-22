@@ -10,11 +10,10 @@ const PortfolioItem = ({
       <div className="relative w-full h-full flex items-center justify-center">
         <picture className="w-full h-full">
           <source
-            className="w-full h-full object-contain"
             media="(min-width: 850px)"
             srcSet={portfolioItemInfo.images[0].fullQualityPath}
           />
-          <img className="w-full h-full object-contain" src={portfolioItemInfo.images[0].mobileQualityPath} />
+          <img className="w-full md:h-full absolute top-0 left-0 md:relative object-contain" src={portfolioItemInfo.images[0].mobileQualityPath} />
         </picture>
 
         <div className="info-panel absolute bottom-0 md:bottom-[10%] text-white p-8 w-[98%] flex justify-center">
@@ -31,16 +30,16 @@ const PortfolioItem = ({
             </div>
             <div>
               <div className="grid grid-cols-4 gap-y-5">
-                <label className="col-span-1 text-base md:text-lg mr-3">Tech Stack:</label>
-                <p className="col-span-3 text-base md:text-lg font-thin">
+                <label className="col-span-1 text-sm md:text-lg mr-3">Tech Stack:</label>
+                <p className="col-span-3 text-sm md:text-lg font-thin">
                   {portfolioItemInfo.technologiesUsed.join(", ")}
                 </p>
                 {portfolioItemInfo.teamSize ? (
                   <>
-                    <label className="col-span-1 text-base md:text-lg mr-3">
+                    <label className="col-span-1 text-sm md:text-lg mr-3">
                       Team Size:
                     </label>
-                    <p className="col-span-3 text-base md:text-lg font-thin">
+                    <p className="col-span-3 text-sm md:text-lg font-thin">
                       {portfolioItemInfo.teamSize}
                     </p>
                   </>
@@ -49,8 +48,8 @@ const PortfolioItem = ({
                 )}
                 {portfolioItemInfo.myRole ? (
                   <>
-                    <label className="col-span-1 text-base md:text-lg mr-3">Role:</label>
-                    <p className="col-span-3 text-base md:text-lg font-thin">
+                    <label className="col-span-1 text-sm md:text-lg mr-3">Role:</label>
+                    <p className="col-span-3 text-sm md:text-lg font-thin">
                       {portfolioItemInfo.myRole}
                     </p>
                   </>
