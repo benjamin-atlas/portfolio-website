@@ -10,6 +10,8 @@ import {
   faHouse,
   faBookOpen,
   faServer,
+  faBars,
+  faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -70,6 +72,9 @@ const Nav = () => {
     },
   ]);
 
+  const [mobileNavShowing, setMobileNavShowing]: [boolean, any] =
+    useState(false);
+
   const socialButtons: SocialButton[] = [
     { link: "", icon: faTwitter },
     { link: "", icon: faFacebook },
@@ -88,6 +93,7 @@ const Nav = () => {
   };
 
   const scrollToSection = (sectionId: string) => {
+    setMobileNavShowing(false);
     const section: HTMLElement | null = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
@@ -120,7 +126,22 @@ const Nav = () => {
 
   return (
     <>
-      <div className="bg-black col-span-2 text-center font-poppins justify-center hidden xl:flex">
+      <div
+        className="fixed top-2 left-2 xl:hidden z-30 text-2xl info-panel p-3 rounded-full"
+        onClick={() => setMobileNavShowing(!mobileNavShowing)}
+      >
+        <FontAwesomeIcon
+          icon={mobileNavShowing ? faArrowLeft : faBars}
+        ></FontAwesomeIcon>
+      </div>
+      <div
+        className={`bg-black col-span-2 text-center font-poppins justify-center ${
+          mobileNavShowing
+            ? "fixed top-0 left-[0%] w-[80%] md:w-[50%] xl:w-full h-full z-20 flex"
+            : "fixed xl:relative top-0 h-full w-[80%] md:w-[50%] xl:w-full left-[-100%] xl:left-0 z-20"
+        } xl:flex`}
+        style={{ transition: "left 100ms ease-in-out" }}
+      >
         <div className="fixed top-[50%] translate-y-[-50%]">
           <div className="rounded-full bg-indigo-50 h-[125px] w-[125px] text-black mt-5 mb-2 inline-block overflow-hidden border-8 border-gray-800">
             <img src={profilePic} />
