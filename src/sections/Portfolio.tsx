@@ -76,8 +76,7 @@ const Portfolio = () => {
             portfolioItemInfo={{
               title: "Perfect Blackjack Strategy",
               descriptionPoints: [
-                "At the time of writing, our development team at Apollo is preparing to go to AWS re:Invent 2023 in Las Vegas. One of my best friends (and team mate) and I have a running joke that we like to try to learn perfect blackjack strategy every few years.",
-                "This year, I decided to make a tool to help us actually practice and learn. It isn't a fully-functioning blackjack simulator, its just meant to train the user to make the correct decision based on the hand. It tracks your high score and even has a nifty chart to reference as you learn!",
+                "At the time of writing, our development team at Apollo is preparing to go to AWS re:Invent 2023 in Las Vegas. One of my best friends (and team mate) and I have a running joke that we like to try to learn perfect blackjack strategy every few years. This year, I decided to make a tool to help us actually practice and learn. It tracks your high score and even has a nifty chart to reference as you learn!",
                 "I also used this project as an excuse to learn Vue 3 and get some artsy-energy out. The design is heavily inspired by a game I love called Tunic, which is a low-poly puzzle platformer in an isometric perspective.",
                 "I know the cards didn't have to isometric, but I do what I want. Try to beat my high score!",
               ],
